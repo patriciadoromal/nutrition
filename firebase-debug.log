@@ -17,3 +17,33 @@
 [info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=981177725&redirect_uri=http%3A%2F%2Flocalhost%3A9005
 [info] 
 [info] Waiting for authentication...
+[debug] [2023-04-02T14:04:03.968Z] ----------------------------------------------------------------------
+[debug] [2023-04-02T14:04:03.970Z] Command:       /Users/user/.nvm/versions/node/v16.18.1/bin/node /Users/user/.nvm/versions/node/v16.18.1/bin/firebase login
+[debug] [2023-04-02T14:04:03.971Z] CLI Version:   11.25.2
+[debug] [2023-04-02T14:04:03.971Z] Platform:      darwin
+[debug] [2023-04-02T14:04:03.971Z] Node Version:  v16.18.1
+[debug] [2023-04-02T14:04:03.973Z] Time:          Sun Apr 02 2023 22:04:03 GMT+0800 (Philippine Standard Time)
+[debug] [2023-04-02T14:04:03.973Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=213268808&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-04-02T14:15:25.188Z] ----------------------------------------------------------------------
+[debug] [2023-04-02T14:15:25.190Z] Command:       /Users/user/.nvm/versions/node/v16.18.1/bin/node /Users/user/.nvm/versions/node/v16.18.1/bin/firebase login
+[debug] [2023-04-02T14:15:25.190Z] CLI Version:   11.25.2
+[debug] [2023-04-02T14:15:25.190Z] Platform:      darwin
+[debug] [2023-04-02T14:15:25.190Z] Node Version:  v16.18.1
+[debug] [2023-04-02T14:15:25.192Z] Time:          Sun Apr 02 2023 22:15:25 GMT+0800 (Philippine Standard Time)
+[debug] [2023-04-02T14:15:25.192Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=164467715&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
