@@ -11,8 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     declarations: [AppComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         SharedModule,
+        AppRoutingModule,
         provideFirestore(() => getFirestore()),
         BrowserAnimationsModule,
     ],
