@@ -28,6 +28,7 @@ module.exports = {
         },
         extend: {
             colors: {
+                primary: 'black',
                 'brand-orange': '#F3B43A',
                 'brand-gray': '#E6E6EB',
                 'input-gray': '#EDEEF3',
