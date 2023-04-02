@@ -1,0 +1,28 @@
+{
+    "meals": [
+        {
+            "name": "Egg Brioche",
+            "protein": "26.12",
+            "image": "",
+            "carbs": "23",
+            "fat": "33.32",
+            "calories": "445"
+        },
+        {
+            "name": "Anabolic Pancake",
+            "protein": "20.35",
+            "image": "",
+            "carbs": "22.16",
+            "fat": "111.35",
+            "calories": "686.5"
+        },
+        {
+            "name": "Anabolic Pancake",
+            "protein": "20.35",
+            "image": "",
+            "carbs": "22.16",
+            "fat": "111.35",
+            "calories": "686.5"
+        }
+    ]
+}
