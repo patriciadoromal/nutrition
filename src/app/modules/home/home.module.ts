@@ -15,6 +15,9 @@ import {RouterModule} from '@angular/router'
         HomeSection3Component,
         HomeSection4Component,
     ],
-    imports: [SharedModule, RouterModule],
+    imports: [
+        SharedModule,
+        RouterModule.forChild([{path: '', component: HomeComponent}]),
+    ],
 })
 export class HomeModule {}
