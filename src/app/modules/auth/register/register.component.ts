@@ -27,8 +27,6 @@ export class RegisterComponent implements OnInit {
     })
 
     async register() {
-        this.loading = true
-
         if (
             this.form.get('password')?.value !==
             this.form.get('password')?.value
@@ -39,21 +37,29 @@ export class RegisterComponent implements OnInit {
         if (this.form.invalid) {
             return alert('One or more fields should not be empty')
         }
+
+        this.loading = true
+
         try {
             const data = this.form.value
 
-            await this._angularFireStore.collection(CollectionEnum.USER).add({
-                ...data,
-                createdAt: Date.now(),
-                updateAt: Date.now(),
-            })
+            const results = await this._angularFireStore
+                .collection(CollectionEnum.USER)
+                .add({
+                    ...data,
+                    createdAt: Date.now(),
+                    updateAt: Date.now(),
+                })
 
             this._router.navigate(['/auth/personal-data']).then(() => {
-                localStorage.setItem('user', JSON.stringify(data))
+                localStorage.setItem(
+                    'user',
+                    JSON.stringify({...data, id: results.id}),
+                )
             })
         } catch (error) {
         } finally {
-            this.loading = true
+            this.loading = false
         }
     }
 }

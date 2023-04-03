@@ -1,4 +1,4 @@
-<div class="p-10 absolute z-1">
+<div class="absolute p-10 z-1">
     <img
         role="button"
         routerLink="/"
@@ -7,9 +7,9 @@
     />
 </div>
 
-<div class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
+<form [formGroup]="form" class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
     <div
-        class="w-full text-center flex flex-col max-w-screen-sm mx-auto justify-center"
+        class="flex flex-col justify-center w-full max-w-screen-sm mx-auto text-center"
     >
         <div class="font-bold text-[20px]">Let's get to know you</div>
         <div class="text-[14px] mb-16">
@@ -19,52 +19,74 @@
         <div class="grid md:grid-cols-2 gap-x-10">
             <mat-form-field appearance="fill">
                 <mat-label>Birthdate</mat-label>
-                <input matInput type="email" />
+                <input formControlName="dob" matInput type="date" />
                 <mat-error>{{ 'Birthdate is required' }}.</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Sex</mat-label>
-                <input matInput type="email" />
+                <mat-select formControlName="sex">
+                    <mat-option
+                        [value]="item"
+                        *ngFor="let item of SEX; trackBy: trackByFn"
+                        >{{ item }}</mat-option
+                    >
+                </mat-select>
                 <mat-error>{{ 'Sex is required' }}.</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Height</mat-label>
-                <input matInput type="email" />
+                <input formControlName="height" matInput type="number" />
                 <mat-error>{{ 'Height is required' }}.</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Weight</mat-label>
-                <input matInput type="email" />
+                <input formControlName="weight" matInput type="number" />
                 <mat-error>{{ 'Weight is required' }}.</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Goal</mat-label>
-                <input matInput type="email" />
+                <mat-select formControlName="goal">
+                    <mat-option
+                        [value]="item"
+                        *ngFor="let item of GOALS; trackBy: trackByFn"
+                        >{{ item }}</mat-option
+                    >
+                </mat-select>
                 <mat-error>{{ 'Goal is required' }}.</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Activity level</mat-label>
-                <input matInput type="email" />
+                <mat-select formControlName="activityLevel">
+                    <mat-option
+                        [value]="item"
+                        *ngFor="let item of ACTIVITY; trackBy: trackByFn"
+                        >{{ item }}</mat-option
+                    >
+                </mat-select>
                 <mat-error>{{ 'Activity level is required' }}.</mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-span-2" appearance="fill">
-                <mat-label>Food Allergy</mat-label>
-                <textarea matInput></textarea>
+                <mat-label>Food Allergies</mat-label>
+                <textarea formControlName="allergies" matInput></textarea>
                 <mat-error>{{ 'Food Allergy is required' }}.</mat-error>
             </mat-form-field>
         </div>
 
         <button
             (click)="next()"
-            class="w-full rounded-[14px] text-white font-bold bg-brand-orange h-[55px]"
+            [ngClass]="{
+                'text-white bg-brand-orange': !loading,
+                'text-black bg-gray-500': loading
+            }"
+            class="w-full rounded-[14px] font-bold h-[55px]"
         >
-            Let's Do This!
+            {{ !loading ? "Let's Do This!" : 'Please wait..' }}
         </button>
     </div>
 
@@ -81,4 +103,4 @@
 
         <span class="text-brand-orange">personalized</span> recommendations!
     </div>
-</div>
+</form>

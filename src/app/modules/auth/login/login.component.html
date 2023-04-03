@@ -1,4 +1,4 @@
-<div class="p-10 absolute z-1">
+<div class="absolute p-10 z-1">
     <img
         role="button"
         routerLink="/"
@@ -7,16 +7,21 @@
     />
 </div>
 
-<div class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
+<form [formGroup]="form" class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
     <div
-        class="w-full text-center flex flex-col max-w-screen-sm mx-auto justify-center"
+        class="flex flex-col justify-center w-full max-w-screen-sm mx-auto text-center"
     >
         <div class="font-bold text-[20px]">Your healthy future awaits!</div>
         <div class="text-[14px] mb-16">Sign in to get started</div>
 
         <mat-form-field appearance="fill">
             <mat-label>Email Address</mat-label>
-            <input matInput type="email" [placeholder]="'Email Address'" />
+            <input
+                matInput
+                formControlName="email"
+                type="email"
+                [placeholder]="'Email Address'"
+            />
             <mat-error>{{ 'Email is required' }}.</mat-error>
         </mat-form-field>
 
@@ -26,6 +31,7 @@
                 matInput
                 #passwordField
                 type="password"
+                formControlName="password"
                 [placeholder]="'Password'"
             />
 
@@ -49,13 +55,17 @@
             <mat-error>{{ 'Password is required' }}.</mat-error>
         </mat-form-field>
 
-        <div class="my-3 ml-auto mb-8">Forgot Password?</div>
+        <div class="my-3 mb-8 ml-auto">Forgot Password?</div>
 
         <button
             (click)="login()"
-            class="w-full rounded-[14px] text-white font-bold bg-brand-orange h-[55px]"
+            [ngClass]="{
+                'text-white bg-brand-orange': !loading,
+                'text-black bg-gray-500': loading
+            }"
+            class="w-full rounded-[14px] font-bold h-[55px]"
         >
-            Login
+            {{ !loading ? 'Login' : 'Please wait..' }}
         </button>
 
         <button
@@ -78,4 +88,4 @@
         Don't miss out on personalized
         <span class="text-brand-orange">nutrition</span> recommendations!
     </div>
-</div>
+</form>

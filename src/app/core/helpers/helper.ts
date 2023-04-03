@@ -1,28 +1,14 @@
-interface DailyMacroNeeds {
-    protein: number
-    carbs: number
-    fat: number
-    totalCalories: number
-}
+import {ActivityLevelEnum} from '../enum/activity-level.enum'
+import {GoalEnum} from '../enum/goal.enum'
+import {SexEnum} from '../enum/sex.enum'
 
-type Sex = 'male' | 'female'
-
-type ActivityLevel =
-    | 'sedentary'
-    | 'lightlyActive'
-    | 'moderatelyActive'
-    | 'veryActive'
-    | 'extraActive'
-
-type Goal = 'loseWeight' | 'maintainWeight' | 'gainWeight'
-
-function calculateDailyMacroNeeds(data: {
+export function calculateDailyMacroNeeds(data: {
     age: number
-    sex: Sex
+    sex: SexEnum
     height: number
     weight: number
-    activityLevel: ActivityLevel
-    goal: Goal
+    goal: GoalEnum
+    activityLevel: ActivityLevelEnum
 }): DailyMacroNeeds {
     const {age, sex, height, weight, activityLevel, goal} = data
 
@@ -30,7 +16,7 @@ function calculateDailyMacroNeeds(data: {
     let tdee: number
 
     // Calculate basal metabolic rate (BMR) using Mifflin-St Jeor formula
-    if (sex === 'male') {
+    if (sex === SexEnum.MALE) {
         bmr = 10 * weight + 6.25 * height - 5 * age + 5
     } else {
         bmr = 10 * weight + 6.25 * height - 5 * age - 161
@@ -38,19 +24,19 @@ function calculateDailyMacroNeeds(data: {
 
     // Calculate total daily energy expenditure (TDEE) based on activity level
     switch (activityLevel) {
-        case 'sedentary':
+        case ActivityLevelEnum.SEDENTARY:
             tdee = bmr * 1.2
             break
-        case 'lightlyActive':
+        case ActivityLevelEnum.LIGHTLY_ACTIVE:
             tdee = bmr * 1.375
             break
-        case 'moderatelyActive':
+        case ActivityLevelEnum.MODERATELY_ACTIVE:
             tdee = bmr * 1.55
             break
-        case 'veryActive':
+        case ActivityLevelEnum.VERY_ACTIVE:
             tdee = bmr * 1.725
             break
-        case 'extraActive':
+        case ActivityLevelEnum.EXTRA_ACTIVE:
             tdee = bmr * 1.9
             break
         default:
@@ -59,13 +45,13 @@ function calculateDailyMacroNeeds(data: {
 
     // Adjust TDEE based on goal
     switch (goal) {
-        case 'loseWeight':
+        case GoalEnum.LOSE_WEIGHT:
             tdee = tdee * 0.8
             break
-        case 'maintainWeight':
+        case GoalEnum.MAINTAIN_WEIGHT:
             // No adjustment needed
             break
-        case 'gainWeight':
+        case GoalEnum.GAIN_WEIGHT:
             tdee = tdee * 1.2
             break
         default:
