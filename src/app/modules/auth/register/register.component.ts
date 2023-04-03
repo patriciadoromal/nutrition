@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    loading: boolean = false
+
     form = this._formBuilder.group({
         password: ['', [Validators.required]],
         confirmPassword: ['', [Validators.required]],
@@ -25,6 +27,8 @@ export class RegisterComponent implements OnInit {
     })
 
     async register() {
+        this.loading = true
+
         if (
             this.form.get('password')?.value !==
             this.form.get('password')?.value
@@ -44,9 +48,12 @@ export class RegisterComponent implements OnInit {
                 updateAt: Date.now(),
             })
 
-            return data
-        } catch (error) {}
-
-        this._router.navigate(['/auth/personal-data'])
+            this._router.navigate(['/auth/personal-data']).then(() => {
+                localStorage.setItem('user', JSON.stringify(data))
+            })
+        } catch (error) {
+        } finally {
+            this.loading = true
+        }
     }
 }
