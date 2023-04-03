@@ -1,4 +1,4 @@
-import {Week} from './week.model'
+import {Recommendation} from './recommendation.model'
 
 export interface User {
     dob: string
@@ -10,5 +10,5 @@ export interface User {
     password: string
     allergies: string
     activityLevel: string
-    recommendations: Week[]
+    recommendation: Recommendation
 }

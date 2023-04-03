@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Meal} from './../../core/models/meal.model'
+import {Component, Input, OnInit} from '@angular/core'
 
 @Component({
-  selector: 'meal',
-  templateUrl: './meal.component.html',
-  styleUrls: ['./meal.component.scss']
+    selector: 'meal',
+    templateUrl: './meal.component.html',
+    styleUrls: ['./meal.component.scss'],
 })
 export class MealComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
+    @Input()
+    meal?: Meal
 
-  ngOnInit(): void {
-  }
+    @Input()
+    percentage = 0
 
+    @Input()
+    hasPercentage: boolean = false
+
+    ngOnInit(): void {}
 }

@@ -1,1 +1,13 @@
-<p>prediction works!</p>
+<div class="font-bold text-[20px]">Want to know the calories of your food?</div>
+<div class="text-gray-500 text-[14px]">Place an image on your webcam</div>
+
+<img
+    src="../../../../assets/prediction-bg.png"
+    class="w-full h-[315px] my-8"
+    alt=""
+/>
+
+<meal
+    [hasPercentage]="true"
+    *ngFor="let item of [1, 23, 4, 5, 6]; trackBy: trackByFn"
+></meal>

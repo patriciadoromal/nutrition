@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 
 @Component({
-  selector: 'prediction',
-  templateUrl: './prediction.component.html',
-  styleUrls: ['./prediction.component.scss']
+    selector: 'prediction',
+    templateUrl: './prediction.component.html',
+    styleUrls: ['./prediction.component.scss'],
 })
 export class PredictionComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
+    ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+    trackByFn(index: number, item: any): any {
+        return item.id || index
+    }
 }

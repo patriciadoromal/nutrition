@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 
 @Component({
-  selector: 'dashboard-meals',
-  templateUrl: './dashboard-meals.component.html',
-  styleUrls: ['./dashboard-meals.component.scss']
+    selector: 'dashboard-meals',
+    templateUrl: './dashboard-meals.component.html',
+    styleUrls: ['./dashboard-meals.component.scss'],
 })
 export class DashboardMealsComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
+    ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+    trackByFn(index: number, item: any): any {
+        return item.id || index
+    }
 }
