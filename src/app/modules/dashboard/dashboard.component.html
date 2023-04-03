@@ -1,1 +1,18 @@
-<p>dashboard works!</p>
+<div class="grid grid-cols-3">
+    <div class="p-10 z-1 col-span-3">
+        <img
+            role="button"
+            routerLink="/"
+            src="../../../../assets/logo.png"
+            alt=""
+        />
+    </div>
+
+    <div class="p-10 min-h-full w-full">
+        <dashboard-meals></dashboard-meals>
+    </div>
+
+    <div class="border-l border-gray-100 p-10 min-h-full w-full">
+        <prediction></prediction>
+    </div>
+</div>

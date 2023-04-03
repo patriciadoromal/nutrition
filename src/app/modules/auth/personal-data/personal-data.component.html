@@ -1,1 +1,84 @@
-<p>personal-data works!</p>
+<div class="p-10 absolute z-1">
+    <img
+        role="button"
+        routerLink="/"
+        src="../../../../assets/logo.png"
+        alt=""
+    />
+</div>
+
+<div class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
+    <div
+        class="w-full text-center flex flex-col max-w-screen-sm mx-auto justify-center"
+    >
+        <div class="font-bold text-[20px]">Let's get to know you</div>
+        <div class="text-[14px] mb-16">
+            personalized nutrition starts with understanding your needs
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-x-10">
+            <mat-form-field appearance="fill">
+                <mat-label>Birthdate</mat-label>
+                <input matInput type="email" />
+                <mat-error>{{ 'Birthdate is required' }}.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Sex</mat-label>
+                <input matInput type="email" />
+                <mat-error>{{ 'Sex is required' }}.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Height</mat-label>
+                <input matInput type="email" />
+                <mat-error>{{ 'Height is required' }}.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Weight</mat-label>
+                <input matInput type="email" />
+                <mat-error>{{ 'Weight is required' }}.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Goal</mat-label>
+                <input matInput type="email" />
+                <mat-error>{{ 'Goal is required' }}.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Activity level</mat-label>
+                <input matInput type="email" />
+                <mat-error>{{ 'Activity level is required' }}.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-span-2" appearance="fill">
+                <mat-label>Food Allergy</mat-label>
+                <textarea matInput></textarea>
+                <mat-error>{{ 'Food Allergy is required' }}.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <button
+            (click)="next()"
+            class="w-full rounded-[14px] text-white font-bold bg-brand-orange h-[55px]"
+        >
+            Let's Do This!
+        </button>
+    </div>
+
+    <img
+        src="../../../././../assets/personal-data-bg.png"
+        class="h-[100vh] absolute right-0 top-0 z-0 max-w-[50%] z-1"
+        alt=""
+    />
+
+    <div
+        class="text-white text-[50px] font-black absolute right-10 bottom-40 z-60 max-w-screen-sm"
+    >
+        Don't settle for generic nutrition advice. Let us know you for
+
+        <span class="text-brand-orange">personalized</span> recommendations!
+    </div>
+</div>

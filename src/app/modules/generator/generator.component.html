@@ -1,1 +1,28 @@
-<p>generator works!</p>
+<div class="grid grid-cols-3">
+    <div class="p-10 z-1 col-span-3">
+        <img
+            role="button"
+            routerLink="/"
+            src="../../../../assets/logo.png"
+            alt=""
+        />
+    </div>
+
+    <div class="p-10 min-h-full w-full">
+        <generator-button></generator-button>
+
+        <generator-week-and-day></generator-week-and-day>
+
+        <generator-meals></generator-meals>
+
+        <generator-nutrition-facts></generator-nutrition-facts>
+    </div>
+
+    <div class="border-l border-gray-100 p-10 min-h-full w-full">
+        <generator-macros></generator-macros>
+
+        <generator-bmi></generator-bmi>
+
+        <generator-targets-table></generator-targets-table>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+import {GeneratorBmiComponent} from './generator-bmi/generator-bmi.component'
 import {RouterModule} from '@angular/router'
 import {GENERATOR_ROUTING} from './../../core/routes/generator.routing'
 import {SharedModule} from './../../shared/shared.module'
@@ -14,6 +15,7 @@ import {GeneratorWeekAndDayComponent} from './generator-week-and-day/generator-w
 @NgModule({
     declarations: [
         GeneratorComponent,
+        GeneratorBmiComponent,
         GeneratorButtonComponent,
         GeneratorMacrosComponent,
         GeneratorMealsComponent,

@@ -27,6 +27,9 @@ module.exports = {
             xl: '1440px',
         },
         extend: {
+            layers: {
+                custom: {},
+            },
             colors: {
                 primary: 'black',
                 'brand-orange': '#F3B43A',
@@ -94,6 +97,11 @@ module.exports = {
                 '1/4': '25%',
                 '2/4': '50%',
                 '3/4': '75%',
+            },
+            custom: {
+                '.icon-size-6': {
+                    'font-size': '6rem',
+                },
             },
         },
     },

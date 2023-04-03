@@ -1,1 +1,81 @@
-<p>login works!</p>
+<div class="p-10 absolute z-1">
+    <img
+        role="button"
+        routerLink="/"
+        src="../../../../assets/logo.png"
+        alt=""
+    />
+</div>
+
+<div class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
+    <div
+        class="w-full text-center flex flex-col max-w-screen-sm mx-auto justify-center"
+    >
+        <div class="font-bold text-[20px]">Your healthy future awaits!</div>
+        <div class="text-[14px] mb-16">Sign in to get started</div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" [placeholder]="'Email Address'" />
+            <mat-error>{{ 'Email is required' }}.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input
+                matInput
+                #passwordField
+                type="password"
+                [placeholder]="'Password'"
+            />
+
+            <button
+                mat-icon-button
+                matSuffix
+                (click)="
+                    passwordField.type =
+                        passwordField.type === 'text' ? 'password' : 'text'
+                "
+            >
+                <i
+                    class="text-3xl text-[#365681]"
+                    [class]="
+                        passwordField.type !== 'text'
+                            ? 'eye-fill'
+                            : 'eye-slash-fill'
+                    "
+                ></i>
+            </button>
+            <mat-error>{{ 'Password is required' }}.</mat-error>
+        </mat-form-field>
+
+        <div class="my-3 ml-auto mb-8">Forgot Password?</div>
+
+        <button
+            (click)="login()"
+            class="w-full rounded-[14px] text-white font-bold bg-brand-orange h-[55px]"
+        >
+            Login
+        </button>
+
+        <button
+            routerLink="/auth/register"
+            class="mt-2 w-full rounded-[14px] font-bold bg-brand-gray h-[55px]"
+        >
+            Create an account
+        </button>
+    </div>
+
+    <img
+        src="../../../././../assets/login-bg.png"
+        class="h-[100vh] absolute right-0 top-0 z-0 max-w-[50%] z-1"
+        alt=""
+    />
+
+    <div
+        class="text-white text-[50px] font-black absolute right-10 bottom-40 z-60 max-w-screen-sm"
+    >
+        Don't miss out on personalized
+        <span class="text-brand-orange">nutrition</span> recommendations!
+    </div>
+</div>

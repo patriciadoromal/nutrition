@@ -214,12 +214,12 @@
         /* Apply primary color */
         &.mat-primary {
             .mat-icon {
-                @apply text-primary #{'!important'};
+                @apply text-black #{'!important'};
             }
         }
 
-        /* Apply black color */
-        &.mat-black {
+        /* Apply accent color */
+        &.mat-accent {
             .mat-icon {
                 @apply text-black #{'!important'};
             }
@@ -371,11 +371,11 @@
     &.mat-focused:not(.mat-form-field-invalid) {
         /* Border color */
         .mat-mdc-text-field-wrapper {
-            @apply border-2 border-black dark:border-black #{'!important'};
+            @apply border-2 border-brand-orange dark:border-brand-orange #{'!important'};
         }
     }
 
-    /* Remove the black arrow for native select */
+    /* Remove the default arrow for native select */
     &.mat-mdc-form-field-type-mat-native-select {
         .mat-mdc-form-field-infix {
             select {
@@ -400,12 +400,12 @@
         }
     }
 
-    /* black style tweaks and enhancements */
+    /* Default style tweaks and enhancements */
     .mat-mdc-text-field-wrapper {
         padding: 0;
         border-radius: 12px;
         border-style: solid;
-        @apply shadow-sm bg-input-gray  #{'!important'};
+        @apply shadow-sm bg-gray-100  #{'!important'};
 
         /* Adjust the top spacing and overflow when mat-label present */
         &:not(.mdc-text-field--no-label) {
@@ -491,9 +491,8 @@
                     @apply text-hint;
                 }
 
-                /* Datepicker black icon size */
-                .mat-datepicker-toggle-black-icon {
-                    @apply text-sm;
+                /* Datepicker default icon size */
+                .mat-datepicker-toggle-default-icon {
                 }
 
                 /* Make mat-select usable as prefix and suffix */
@@ -504,7 +503,7 @@
                     &:focus {
                         .mat-mdc-select-trigger {
                             .mat-mdc-select-value {
-                                @apply text-primary #{'!important'};
+                                @apply text-black #{'!important'};
                             }
 
                             .mat-mdc-select-arrow-wrapper {
@@ -892,12 +891,12 @@
             }
         }
 
-        /* black */
-        &.mat-black {
+        /* Accent */
+        &.mat-accent {
             .mdc-notched-outline__leading,
             .mdc-notched-outline__notch,
             .mdc-notched-outline__trailing {
-                border-color: var(--fuse-black) !important;
+                border-color: var(--fuse-accent) !important;
             }
         }
     }
@@ -1171,7 +1170,7 @@
         }
     }
 
-    &:not(.mat-background-primary):not(.mat-background-black) {
+    &:not(.mat-background-primary):not(.mat-background-accent) {
         .mat-mdc-tab-header {
             .mat-mdc-tab-label-container {
                 box-shadow: inset 0 -1px var(--fuse-border);
@@ -1224,6 +1223,29 @@ textarea.mat-mdc-input-element {
         }
     }
 
+    /* Apply accent contrast color */
+    &.mat-accent {
+        .mat-icon {
+            @apply text-black #{'!important'};
+        }
+
+        .text-secondary {
+            @apply text-black text-opacity-60 #{'!important'};
+        }
+
+        .text-hint {
+            @apply text-black text-opacity-38 #{'!important'};
+        }
+
+        .text-disabled {
+            @apply text-black text-opacity-38 #{'!important'};
+        }
+
+        .divider {
+            @apply text-black text-opacity-12 #{'!important'};
+        }
+    }
+
     /* Apply warn contrast color */
     &.mat-warn {
         .mat-icon {
@@ -1249,21 +1271,21 @@ textarea.mat-mdc-input-element {
 }
 
 .mdc-linear-progress__buffer-bar {
-    @apply bg-black   #{'!important'};
+    @apply bg-brand-orange   #{'!important'};
 }
 
 .mat-mdc-progress-bar {
-    @apply bg-black  #{'!important'};
+    @apply bg-brand-orange  #{'!important'};
 }
 
 .mat-mdc-select-panel,
 .mat-mdc-menu-panel,
 .mat-datepicker-content {
-    @apply bg-white border border-input-gray rounded-2xl shadow-xl shadow-teal-900/10  #{'!important'};
+    @apply bg-white border border-gray-100 rounded-2xl shadow-xl shadow-teal-900/10  #{'!important'};
 
     mat-option,
     .mat-mdc-menu-item {
-        @apply text-gray-500 md:hover:font-bold md:hover:text-gray-700 md:hover:bg-input-gray #{'!important'};
+        @apply text-gray-500 md:hover:font-bold md:hover:text-gray-700 md:hover:bg-gray-100 #{'!important'};
     }
 }
 
@@ -1290,11 +1312,11 @@ select {
 }
 
 .mat-calendar-body-selected {
-    @apply bg-black  #{'!important'};
+    @apply bg-brand-orange  #{'!important'};
 }
 
 // .mat-calendar-body-in-range {
-//     @apply bg-black/30  #{'!important'};
+//     @apply bg-brand-orange/30  #{'!important'};
 // }
 
 .mat-mdc-select-arrow {
