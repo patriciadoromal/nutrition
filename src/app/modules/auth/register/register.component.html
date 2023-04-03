@@ -7,7 +7,7 @@
     />
 </div>
 
-<div class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
+<form [formGroup]="form" class="h-ful w-full grid grid-cols-2 min-h-[100vh]">
     <div
         class="w-full text-center flex flex-col max-w-screen-sm mx-auto justify-center"
     >
@@ -18,8 +18,15 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Email Address</mat-label>
-            <input matInput type="email" [placeholder]="'Email Address'" />
-            <mat-error>{{ 'Email is required' }}.</mat-error>
+            <input
+                formControlName="email"
+                matInput
+                type="email"
+                [placeholder]="'Email Address'"
+            />
+            <mat-error
+                >{{ 'Email should be a valid email format.' }}.</mat-error
+            >
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -29,6 +36,7 @@
                 #passwordField
                 type="password"
                 [placeholder]="'Password'"
+                formControlName="password"
             />
 
             <button
@@ -58,6 +66,7 @@
                 #confirmPassword
                 type="password"
                 [placeholder]="'Password'"
+                formControlName="confirmPassword"
             />
 
             <button
@@ -107,4 +116,4 @@
         Ready to take the first step towards a Don't miss out on personalized
         <span class="text-brand-orange"> healthier </span> you?
     </div>
-</div>
+</form>

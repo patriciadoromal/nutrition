@@ -6,6 +6,9 @@ import {AppRoutingModule} from './app-routing.module'
 import {AppComponent} from './app.component'
 import {provideFirestore, getFirestore} from '@angular/fire/firestore'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app'
+import {environment} from '../environments/environment'
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore'
 
 @NgModule({
     declarations: [AppComponent],
@@ -13,8 +16,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
         BrowserModule,
         SharedModule,
         AppRoutingModule,
-        provideFirestore(() => getFirestore()),
         BrowserAnimationsModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        AngularFirestoreModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

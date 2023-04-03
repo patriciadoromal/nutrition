@@ -1,5 +1,8 @@
+import {FormBuilder, Validators} from '@angular/forms'
 import {Component, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
+import {CollectionEnum} from 'app/core/enum/collection.enum'
+import {AngularFirestore} from '@angular/fire/compat/firestore'
 
 @Component({
     selector: 'register',
@@ -7,11 +10,43 @@ import {Router} from '@angular/router'
     styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-    constructor(private _router: Router) {}
+    constructor(
+        private _router: Router,
+        private _formBuilder: FormBuilder,
+        private _angularFireStore: AngularFirestore,
+    ) {}
 
     ngOnInit(): void {}
 
-    register() {
+    form = this._formBuilder.group({
+        password: ['', [Validators.required]],
+        confirmPassword: ['', [Validators.required]],
+        email: ['', [Validators.email, Validators.required]],
+    })
+
+    async register() {
+        if (
+            this.form.get('password')?.value !==
+            this.form.get('password')?.value
+        ) {
+            return alert('Password should match')
+        }
+
+        if (this.form.invalid) {
+            return alert('One or more fields should not be empty')
+        }
+        try {
+            const data = this.form.value
+
+            await this._angularFireStore.collection(CollectionEnum.USER).add({
+                ...data,
+                createdAt: Date.now(),
+                updateAt: Date.now(),
+            })
+
+            return data
+        } catch (error) {}
+
         this._router.navigate(['/auth/personal-data'])
     }
 }

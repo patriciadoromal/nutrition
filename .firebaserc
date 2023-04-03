@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jamel12345678": {
+      "hosting": {
+        "nutrition": [
+          "jamel12345678"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jamel12345678"
+  }
+}
