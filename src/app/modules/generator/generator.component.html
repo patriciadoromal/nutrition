@@ -18,11 +18,31 @@
         <generator-nutrition-facts></generator-nutrition-facts>
     </div>
 
-    <div class="border-l border-gray-100 p-10 min-h-full w-full">
-        <generator-macros></generator-macros>
+    <div
+        class="border-l border-gray-100 p-10 min-h-full w-full col-span-2 flex flex-col"
+    >
+        <div class="text-center">
+            <div class="font-bold text-[20px]">
+                Let's create your personal nutrition profile!
+            </div>
+            <div class="text-gray-500 text-[14px] mb-4">
+                Together, we'll create a tailored nutrition plan just for you
+            </div>
+        </div>
 
-        <generator-bmi></generator-bmi>
+        <div class="grid grid-cols-2 gap-x-20">
+            <generator-macros></generator-macros>
+
+            <generator-bmi></generator-bmi>
+        </div>
 
         <generator-targets-table></generator-targets-table>
+
+        <button
+        (click)="save()"
+            class="ml-auto mt-9 bg-brand-orange text-white font-bold py-3 px-4 rounded-md"
+        >
+            Let's do this!
+        </button>
     </div>
 </div>

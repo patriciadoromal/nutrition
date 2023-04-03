@@ -1,1 +1,48 @@
-<p>generator-nutrition-facts works!</p>
+<div class="px-3 my-8">
+    <div class="w-full py-1 mb-1 text-lg font-medium border-b border-b-gray-50">
+        Nutrition Facts
+        <span class="font-normal text-gray-400 text-md">(Meals Today)</span>
+    </div>
+
+    <div class="flex items-center">
+        <div class="value">Fat</div>
+
+        <div>
+            {{ 500 | number }}
+            <span class="text-sm text-food">grams </span>
+            <span class="text-xs font-normal text-gray-500"> | day</span>
+        </div>
+    </div>
+
+    <div class="flex items-center">
+        <div class="value">Carbs</div>
+
+        <div class="flex items-end">
+            {{ 500 | number }}
+            <span class="ml-2 text-sm text-food">grams </span>
+            <span class="text-xs font-normal text-gray-500"> | day</span>
+        </div>
+    </div>
+
+    <div class="flex items-center">
+        <div class="value">Protein</div>
+
+        <div class="flex items-end">
+            {{ 500 | number }}
+            <span class="ml-2 text-sm text-food">grams </span>
+            <span class="text-xs font-normal text-gray-500"> | day</span>
+        </div>
+    </div>
+
+    <div class="flex items-center text-2xl text-green-700">
+        <div class="value">Calories</div>
+
+        <div class="font-bold">
+            {{ 500 | number }}
+        </div>
+
+        <span class="ml-2 text-xs font-normal"> cal </span>
+
+        <span class="text-xs font-normal text-gray-500"> | day</span>
+    </div>
+</div>
