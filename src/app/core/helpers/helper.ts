@@ -1,5 +1,6 @@
 import {ActivityLevelEnum} from '../enum/activity-level.enum'
 import {GoalEnum} from '../enum/goal.enum'
+import {MealCombinationEnum} from '../enum/meal.combination.enum'
 import {SexEnum} from '../enum/sex.enum'
 import {DailyMacroNeeds} from '../models/daily-macro-need.model'
 import {User} from '../models/user.model'
@@ -74,4 +75,55 @@ export function checkIfStringsAreEqual(str1, str2) {
     const sanitizedStr1 = str1.replace(/[\s&]/g, '') // remove all spaces and ampersands from the first string
     const sanitizedStr2 = str2.replace(/[\s&]/g, '') // remove all spaces and ampersands from the second string
     return sanitizedStr1.toLowerCase() === sanitizedStr2.toLowerCase()
+}
+
+export function getSuggestion(calorie: number): MealCombinationEnum {
+    if (calorie < 1500) {
+        return MealCombinationEnum.TWO_MEALS_ONE_SNACK
+    }
+    if (between(calorie, 1500, 1700)) {
+        return MealCombinationEnum.THREE_MEALS
+    }
+    if (between(calorie, 1700, 1900)) {
+        return MealCombinationEnum.THREE_MEALS_ONE_SNACK
+    }
+    if (between(calorie, 1900, 2200)) {
+        return MealCombinationEnum.FOUR_MEALS
+    }
+    if (between(calorie, 2200, 2400)) {
+        return MealCombinationEnum.FOUR_MEALS_ONE_SNACK
+    }
+    if (between(calorie, 2400, 2600)) {
+        return MealCombinationEnum.FIVE_MEALS
+    }
+    if (between(calorie, 2600, 2800)) {
+        return MealCombinationEnum.FIVE_MEALS_ONE_SNACK
+    }
+    if (between(calorie, 2800, 3100)) {
+        return MealCombinationEnum.SIX_MEALS
+    }
+    if (between(calorie, 3100, 3400)) {
+        return MealCombinationEnum.SIX_MEALS_ONE_SNACK
+    }
+    if (between(calorie, 3400, 3900)) {
+        return MealCombinationEnum.SEVEN_MEALS
+    }
+
+    if (between(calorie, 3900, 4400)) {
+        return MealCombinationEnum.EIGHT_MEALS
+    }
+
+    if (between(calorie, 4400, 3900)) {
+        return MealCombinationEnum.NINE_MEALS
+    }
+
+    if (between(calorie, 4600, 5100)) {
+        return MealCombinationEnum.TEN_MEALS
+    }
+
+    return MealCombinationEnum.TWO_MEALS
+}
+
+function between(num, min, max) {
+    return num >= min && num <= max
 }
