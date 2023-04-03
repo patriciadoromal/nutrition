@@ -1,4 +1,5 @@
 <div
+    *ngIf="!meal"
     class="flex flex-row-reverse items-center p-1 py-1 border-b md:flex-row border-zinc-100 md:hover:bg-gray-50/50"
 >
     <img
@@ -12,24 +13,6 @@
     />
 
     <div class="flex-1 py-5 text-left md:p-2 md:ml-5 md:py-2">
-        <!-- <div class="text-lg font-semibold">{{ meal.name }}</div>
-
-        <div class="text-sm md:text-base font-light -mt-0.5">
-            Proteins:{{ meal.protein }}
-        </div>
-
-        <div class="text-sm md:text-base font-light -mt-0.5">
-            Carbohydrates: {{ meal.carbs }}
-        </div>
-
-        <div class="text-sm md:text-base font-light -mt-0.5">
-            Fats:: {{ meal.fat }}
-        </div>
-
-        <div class="text-emerald-600 font-black text-lg -mt-0.5">
-            {{ meal.calories }}<span class="text-xs">cal</span>
-        </div> -->
-
         <div class="text-lg font-semibold">Test</div>
 
         <div class="text-sm md:text-base font-light -mt-0.5">Proteins:55</div>
@@ -47,3 +30,43 @@
 
     <div class="ml-auto">5%</div>
 </div>
+
+<ng-container *ngIf="meal">
+    <div
+        class="flex flex-row-reverse items-center p-1 py-1 border-b md:flex-row border-zinc-100 md:hover:bg-gray-50/50"
+    >
+        <img
+            alt="Meal"
+            role="button"
+            [src]="
+                'https://s3.ap-south-1.amazonaws.com/iifym-service-production/meals/Keema Paratha-min.jpg'
+            "
+            class="self-center object-cover w-40 ml-3 md:ml-0"
+            style="height: 100px; aspect-ratio: 1/2 !important"
+        />
+
+        <div class="flex-1 py-5 text-left md:p-2 md:ml-5 md:py-2">
+            <div class="text-lg font-semibold">{{ meal.name }}</div>
+
+            <div class="text-sm md:text-base font-light -mt-0.5">
+                Proteins:{{ meal.protein }}
+            </div>
+
+            <div class="text-sm md:text-base font-light -mt-0.5">
+                Carbohydrates: {{ meal.carbs }}
+            </div>
+
+            <div class="text-sm md:text-base font-light -mt-0.5">
+                Fats:: {{ meal.fat }}
+            </div>
+
+            <div class="text-emerald-600 font-black text-lg -mt-0.5">
+                {{ meal.calories }}<span class="text-xs">cal</span>
+            </div>
+        </div>
+
+        <div class="ml-auto">
+            {{ meal.probability * 100 | number : '1.0-0' }}%
+        </div>
+    </div>
+</ng-container>

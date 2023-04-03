@@ -8,4 +8,5 @@ export interface Meal {
     protein: number
     calories: number
     type: MealTypEnum
+    probability?: number
 }

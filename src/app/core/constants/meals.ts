@@ -1,6 +1,6 @@
 import {Meal} from '../models/meal.model'
 
-export const meals = [
+export const MEALS = [
     {
         name: 'Egg Brioche',
         protein: '26.12',
@@ -20,7 +20,7 @@ export const meals = [
         type: 'Breakfast',
     },
     {
-        name: 'Keema Paratha',
+        name: 'Keema Pancake',
         protein: '25.75',
         image: '26.12',
         carbs: '51.88',

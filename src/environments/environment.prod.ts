@@ -16,4 +16,6 @@ export const environment = {
         messagingSenderId: '984735149944',
         appId: '1:984735149944:web:90e57fc0e94b000dc6e28d',
     },
+    teachableMachineURL:
+        'https://teachablemachine.withgoogle.com/models/Hgujdg0qS/',
 }

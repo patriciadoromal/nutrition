@@ -1,13 +1,15 @@
 <div class="font-bold text-[20px]">Want to know the calories of your food?</div>
 <div class="text-gray-500 text-[14px]">Place an image on your webcam</div>
 
-<img
-    src="../../../../assets/prediction-bg.png"
+<video
+    class="h-full"
     class="w-full h-[315px] my-8"
-    alt=""
-/>
+    #videoElement
+    id="camera-preview"
+></video>
 
 <meal
+    [meal]="meal"
     [hasPercentage]="true"
-    *ngFor="let item of [1, 23, 4, 5, 6]; trackBy: trackByFn"
+    *ngFor="let meal of meals; trackBy: trackByFn"
 ></meal>

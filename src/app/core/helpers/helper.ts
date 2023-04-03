@@ -69,3 +69,9 @@ export function calculateDailyMacroNeeds(user: User): DailyMacroNeeds {
         totalCalories: tdee,
     }
 }
+
+export function checkIfStringsAreEqual(str1, str2) {
+    const sanitizedStr1 = str1.replace(/[\s&]/g, '') // remove all spaces and ampersands from the first string
+    const sanitizedStr2 = str2.replace(/[\s&]/g, '') // remove all spaces and ampersands from the second string
+    return sanitizedStr1.toLowerCase() === sanitizedStr2.toLowerCase()
+}
