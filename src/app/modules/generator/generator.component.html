@@ -1,5 +1,5 @@
-<div class="grid grid-cols-3">
-    <div class="p-10 z-1 col-span-3">
+<div *ngIf="user$ | async as user" class="grid grid-cols-3">
+    <div class="col-span-3 p-10 z-1">
         <img
             role="button"
             routerLink="/"
@@ -8,7 +8,7 @@
         />
     </div>
 
-    <div class="p-10 min-h-full w-full">
+    <div class="w-full min-h-full p-10">
         <generator-button></generator-button>
 
         <generator-week-and-day></generator-week-and-day>
@@ -19,7 +19,7 @@
     </div>
 
     <div
-        class="border-l border-gray-100 p-10 min-h-full w-full col-span-2 flex flex-col"
+        class="flex flex-col w-full min-h-full col-span-2 p-10 border-l border-gray-100"
     >
         <div class="text-center">
             <div class="font-bold text-[20px]">
@@ -31,16 +31,16 @@
         </div>
 
         <div class="grid grid-cols-2 gap-x-20">
-            <generator-macros></generator-macros>
+            <generator-macros [user$]="user$"></generator-macros>
 
-            <generator-bmi></generator-bmi>
+            <generator-bmi [user$]="user$"></generator-bmi>
         </div>
 
         <generator-targets-table></generator-targets-table>
 
         <button
-        (click)="save()"
-            class="ml-auto mt-9 bg-brand-orange text-white font-bold py-3 px-4 rounded-md"
+            (click)="save()"
+            class="px-4 py-3 ml-auto font-bold text-white rounded-md mt-9 bg-brand-orange"
         >
             Let's do this!
         </button>

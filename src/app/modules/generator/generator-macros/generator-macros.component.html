@@ -1,17 +1,23 @@
-<form class="w-full py-3">
+<form *ngIf="user$ | async as user" class="w-full py-3">
     <div class="grid w-full grid-cols-2 mt-8 gap-x-5">
         <div class="col-span-1">
             <mat-form-field appearance="fill" class="w-full">
                 <mat-label>Proteins in grams/day </mat-label>
 
-                <input matInput type="number" id="proteins" disabled />
+                <input
+                    [value]="user.macro.protein | number : '1.0-0'"
+                    matInput
+                    type="number"
+                    id="proteins"
+                    disabled
+                />
                 <mat-error>Proteins is required</mat-error>
             </mat-form-field>
 
             <div class="mb-3 -mt-3 text-sm font-normal text-gray-400">
                 Calories/day :
                 <span class="text-sky-500 md:font-black">
-                    {{ 500 | number }}</span
+                    {{ user.macro.protein * 4 | number : '1.0-0' }}</span
                 >
             </div>
         </div>
@@ -20,7 +26,13 @@
             <mat-form-field appearance="fill" class="w-full">
                 <mat-label>Carbohydrates in grams/day</mat-label>
 
-                <input matInput type="number" id="carbohydrates" disabled />
+                <input
+                    [value]="user.macro.carbs | number : '1.0-0'"
+                    matInput
+                    type="number"
+                    id="carbohydrates"
+                    disabled
+                />
 
                 <mat-error>Carbohydrates is required</mat-error>
             </mat-form-field>
@@ -28,7 +40,7 @@
             <div class="mb-3 -mt-3 text-sm font-normal text-gray-400">
                 Calories/day :
                 <span class="text-sky-500 md:font-black">
-                    {{ 500 | number }}</span
+                    {{ user.macro.carbs * 4 | number : '1.0-0' }}</span
                 >
             </div>
         </div>
@@ -37,7 +49,13 @@
             <mat-form-field appearance="fill" class="w-full">
                 <mat-label>Fats in grams/day</mat-label>
 
-                <input matInput type="number" id="fats" disabled />
+                <input
+                    [value]="user.macro.fat | number : '1.0-0'"
+                    matInput
+                    type="number"
+                    id="fats"
+                    disabled
+                />
 
                 <mat-error>Fats is required</mat-error>
             </mat-form-field>
@@ -45,7 +63,7 @@
             <div class="mb-3 -mt-3 text-sm font-normal text-gray-400">
                 Calories/day :
                 <span class="text-sky-500 md:font-black">
-                    {{ 500 | number }}</span
+                    {{ user.macro.fat * 4 | number : '1.0-0' }}</span
                 >
             </div>
         </div>
@@ -54,7 +72,7 @@
             <div class="text-sm md:text-left">Total Calories</div>
 
             <div class="mb-1 text-5xl font-black md:text-left text-emerald-500">
-                {{ 500 | number : '1.0-0' }}
+                {{ user.macro.totalCalories | number : '1.0-0' }}
                 <span class="text-sm">cal/day</span>
             </div>
         </div>

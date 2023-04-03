@@ -1,4 +1,4 @@
-interface DailyMacroNeeds {
+export interface DailyMacroNeeds {
     protein: number
     carbs: number
     fat: number

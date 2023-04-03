@@ -1,16 +1,15 @@
 import {ActivityLevelEnum} from '../enum/activity-level.enum'
 import {GoalEnum} from '../enum/goal.enum'
 import {SexEnum} from '../enum/sex.enum'
+import {DailyMacroNeeds} from '../models/daily-macro-need.model'
+import {User} from '../models/user.model'
+import {to_age} from '../pipes/age.pipe'
+import * as dayjs from 'dayjs'
 
-export function calculateDailyMacroNeeds(data: {
-    age: number
-    sex: SexEnum
-    height: number
-    weight: number
-    goal: GoalEnum
-    activityLevel: ActivityLevelEnum
-}): DailyMacroNeeds {
-    const {age, sex, height, weight, activityLevel, goal} = data
+export function calculateDailyMacroNeeds(user: User): DailyMacroNeeds {
+    const {sex, height, weight, activityLevel, goal, dob} = user
+
+    const age = to_age(dayjs(dob).toDate())
 
     let bmr: number
     let tdee: number

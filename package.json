@@ -24,6 +24,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
     "@teachablemachine/image": "^0.8.5",
+    "dayjs": "^1.11.7",
     "firebase": "^9.19.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

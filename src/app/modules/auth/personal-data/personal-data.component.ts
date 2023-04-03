@@ -52,7 +52,7 @@ export class PersonalDataComponent implements OnInit {
 
             console.log(user)
 
-            const results = await this._angularFireStore
+            await this._angularFireStore
                 .collection(CollectionEnum.USER)
                 .doc(user.id)
                 .update({
@@ -60,8 +60,6 @@ export class PersonalDataComponent implements OnInit {
                     ...data,
                     updateAt: Date.now(),
                 })
-
-            console.log(results)
 
             this._router.navigate(['/generator']).then(() => {
                 localStorage.setItem('user', JSON.stringify({...user, ...data}))

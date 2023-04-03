@@ -1,2 +1,7 @@
-<div class="font-bold my-8">BMI Score</div>
-<div class="font-bold text-[64px] text-brand-orange">28</div>
+<div class="my-8 font-bold">BMI Score</div>
+<div
+    *ngIf="user$ | async as user"
+    class="font-bold text-[64px] text-brand-orange"
+>
+    {{ user.weight | to_bmi : user.height }}
+</div>
