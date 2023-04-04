@@ -5,9 +5,10 @@
     <ul class="flex py-2 overflow-x-auto max-w-screen">
         <button
             matRipple
+            (click)="activeWeek$.next(week)"
             matRippleColor="rgba(250, 150, 150,.2)"
-            class="flex-1 px-4 py-2 text-sm rounded-sm md:text-xl md:hover:bg-gray-100"
             *ngFor="let week of WEEKS; trackBy: trackByFn"
+            class="flex-1 px-4 py-2 text-sm rounded-sm md:text-xl md:hover:bg-gray-100"
             [ngClass]="{
                 'font-bold bg-brand-orange text-white pointer-events-none':
                     activeWeek === week,
@@ -24,6 +25,7 @@
     >
         <button
             matRipple
+            (click)="activeDay$.next(day)"
             matRippleColor="rgba(250, 150, 150,.2)"
             class="flex-1 py-2 text-sm rounded-sm md:px-5 md:text-xl md:hover:text-food"
             *ngFor="let day of DAYS; trackBy: trackByFn"
