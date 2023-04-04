@@ -1,6 +1,7 @@
+import {DayEnum} from '../enum/day.enum'
 import {Meal} from './meal.model'
 
 export interface Day {
-    name: string
+    name: DayEnum
     meals: Meal[]
 }

@@ -1,1 +1,38 @@
-<p>generator-week-and-day works!</p>
+<div
+    *ngIf="activeWeek$ | async as activeWeek"
+    class="flex flex-col w-full -mt-15 md:mt-0"
+>
+    <ul class="flex py-2 overflow-x-auto max-w-screen">
+        <button
+            matRipple
+            matRippleColor="rgba(250, 150, 150,.2)"
+            class="flex-1 px-4 py-2 text-sm rounded-sm md:text-xl md:hover:bg-gray-100"
+            *ngFor="let week of WEEKS; trackBy: trackByFn"
+            [ngClass]="{
+                'font-bold bg-brand-orange text-white pointer-events-none':
+                    activeWeek === week,
+                'bg-gray-200': activeWeek !== week
+            }"
+        >
+            Week {{ week }}
+        </button>
+    </ul>
+
+    <ul
+        *ngIf="activeDay$ | async as activeDay"
+        class="flex w-full overflow-x-auto bg-neutral-100 max-w-screen"
+    >
+        <button
+            matRipple
+            matRippleColor="rgba(250, 150, 150,.2)"
+            class="flex-1 py-2 text-sm rounded-sm md:px-5 md:text-xl md:hover:text-food"
+            *ngFor="let day of DAYS; trackBy: trackByFn"
+            [ngClass]="{
+                'text-gray-500 ': day !== activeDay,
+                'text-black font-bold pointer-events-none': day === activeDay
+            }"
+        >
+            {{ day | shortened }}
+        </button>
+    </ul>
+</div>
