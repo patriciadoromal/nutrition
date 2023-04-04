@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http'
 import {IsEmptyPipe} from 'app/core/pipes/is-empty.pipe'
 import {AgePipe} from 'app/core/pipes/age.pipe'
 import {ShortenPipe} from 'app/core/pipes/shortened.pipe'
+import {HasDecimalPipe} from 'app/core/pipes/has-decimal.pipe'
 
 const components = [
     ...sharedComponents,
@@ -16,6 +17,7 @@ const components = [
     AgePipe,
     ToBMIPipe,
     ShortenPipe,
+    HasDecimalPipe,
 ]
 
 const modules = [

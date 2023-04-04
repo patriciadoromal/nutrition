@@ -1,6 +1,6 @@
 import {Meal} from '../models/meal.model'
 
-export const MEALS = [
+export const MEALS: Meal[] = [
     {
         name: 'Egg Brioche',
         protein: '26.12',

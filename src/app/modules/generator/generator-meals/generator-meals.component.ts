@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core'
+import {Observable} from 'rxjs'
+import {Component, Input, OnInit} from '@angular/core'
+import {User} from 'app/core/models/user.model'
 
 @Component({
     selector: 'generator-meals',
@@ -7,6 +9,9 @@ import {Component, OnInit} from '@angular/core'
 })
 export class GeneratorMealsComponent implements OnInit {
     constructor() {}
+
+    @Input()
+    user$?: Observable<User>
 
     ngOnInit(): void {}
 
