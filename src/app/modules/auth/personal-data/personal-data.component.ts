@@ -50,8 +50,6 @@ export class PersonalDataComponent implements OnInit {
 
             const user = JSON.parse(localStorage.getItem('user')) as User
 
-            console.log(user)
-
             await this._angularFireStore
                 .collection(CollectionEnum.USER)
                 .doc(user.id)

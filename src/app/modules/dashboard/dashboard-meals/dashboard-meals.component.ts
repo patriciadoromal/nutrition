@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core'
+import {Component, Input, OnInit} from '@angular/core'
+import {Meal} from 'app/core/models/meal.model'
 
 @Component({
     selector: 'dashboard-meals',
@@ -7,6 +8,9 @@ import {Component, OnInit} from '@angular/core'
 })
 export class DashboardMealsComponent implements OnInit {
     constructor() {}
+
+    @Input()
+    meals: Meal[]
 
     ngOnInit(): void {}
 

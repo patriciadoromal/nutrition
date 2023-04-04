@@ -77,8 +77,6 @@ export class PredictionComponent implements OnInit {
             probability: number
         }[],
     ) {
-        console.log(MEALS)
-
         const excludes = []
 
         this.meals = MEALS.map((meal, index) => {

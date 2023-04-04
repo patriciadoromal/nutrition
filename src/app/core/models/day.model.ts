@@ -4,4 +4,5 @@ import {Meal} from './meal.model'
 export interface Day {
     name: DayEnum
     meals: Meal[]
+    date: any
 }

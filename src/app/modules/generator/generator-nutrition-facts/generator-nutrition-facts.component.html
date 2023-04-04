@@ -1,4 +1,4 @@
-<div class="px-3 my-8">
+<div *ngIf="meals" class="px-3 my-8">
     <div class="w-full py-1 mb-1 text-lg font-medium border-b border-b-gray-50">
         Nutrition Facts
         <span class="font-normal text-gray-400 text-md">(Meals Today)</span>
@@ -8,7 +8,7 @@
         <div class="value">Fat</div>
 
         <div>
-            {{ 500 | number }}
+            {{ meals | calculate_daily_summary : 'fat' | number : '1.0-0' }}
             <span class="text-sm text-food">grams </span>
             <span class="text-xs font-normal text-gray-500"> | day</span>
         </div>
@@ -18,7 +18,7 @@
         <div class="value">Carbs</div>
 
         <div class="flex items-end">
-            {{ 500 | number }}
+            {{ meals | calculate_daily_summary : 'carbs' | number : '1.0-0' }}
             <span class="ml-2 text-sm text-food">grams </span>
             <span class="text-xs font-normal text-gray-500"> | day</span>
         </div>
@@ -28,7 +28,7 @@
         <div class="value">Protein</div>
 
         <div class="flex items-end">
-            {{ 500 | number }}
+            {{ meals | calculate_daily_summary : 'protein' | number : '1.0-0' }}
             <span class="ml-2 text-sm text-food">grams </span>
             <span class="text-xs font-normal text-gray-500"> | day</span>
         </div>
@@ -38,7 +38,9 @@
         <div class="value">Calories</div>
 
         <div class="font-bold">
-            {{ 500 | number }}
+            {{
+                meals | calculate_daily_summary : 'calories' | number : '1.0-0'
+            }}
         </div>
 
         <span class="ml-2 text-xs font-normal"> cal </span>

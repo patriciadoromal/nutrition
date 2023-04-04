@@ -1,6 +1,7 @@
 import {Observable} from 'rxjs'
 import {Component, Input, OnInit} from '@angular/core'
 import {User} from 'app/core/models/user.model'
+import {Meal} from 'app/core/models/meal.model'
 
 @Component({
     selector: 'generator-meals',
@@ -12,6 +13,9 @@ export class GeneratorMealsComponent implements OnInit {
 
     @Input()
     user$?: Observable<User>
+
+    @Input()
+    meals: Meal[]
 
     ngOnInit(): void {}
 

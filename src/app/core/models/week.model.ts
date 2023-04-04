@@ -4,4 +4,5 @@ import {Day} from './day.model'
 export interface Week {
     name: WeekEnum
     days: Day[]
+    date: any
 }

@@ -1,3 +1,4 @@
+import {Combination} from 'app/modules/generator/combination.class'
 import {ActivityLevelEnum} from '../enum/activity-level.enum'
 import {GoalEnum} from '../enum/goal.enum'
 import {MealCombinationEnum} from '../enum/meal.combination.enum'
@@ -78,50 +79,52 @@ export function checkIfStringsAreEqual(str1, str2) {
 }
 
 export function getSuggestion(calorie: number): MealCombinationEnum {
+    const combination = new Combination()
+
     if (calorie < 1500) {
         return MealCombinationEnum.TWO_MEALS_ONE_SNACK
     }
     if (between(calorie, 1500, 1700)) {
-        return MealCombinationEnum.THREE_MEALS
+        return MealCombinationEnum.TWO_MEALS_ONE_SNACK
     }
     if (between(calorie, 1700, 1900)) {
-        return MealCombinationEnum.THREE_MEALS_ONE_SNACK
+        return MealCombinationEnum.TWO_MEALS_ONE_SNACK
     }
     if (between(calorie, 1900, 2200)) {
-        return MealCombinationEnum.FOUR_MEALS
+        return combination.getThree()
     }
     if (between(calorie, 2200, 2400)) {
-        return MealCombinationEnum.FOUR_MEALS_ONE_SNACK
+        return MealCombinationEnum.THREE_MEALS_ONE_SNACK
     }
     if (between(calorie, 2400, 2600)) {
-        return MealCombinationEnum.FIVE_MEALS
+        return combination.getFour()
     }
     if (between(calorie, 2600, 2800)) {
-        return MealCombinationEnum.FIVE_MEALS_ONE_SNACK
+        return MealCombinationEnum.FOUR_MEALS_ONE_SNACK
     }
     if (between(calorie, 2800, 3100)) {
-        return MealCombinationEnum.SIX_MEALS
+        return combination.getFive()
     }
     if (between(calorie, 3100, 3400)) {
-        return MealCombinationEnum.SIX_MEALS_ONE_SNACK
+        return MealCombinationEnum.FIVE_MEALS_ONE_SNACK
     }
     if (between(calorie, 3400, 3900)) {
-        return MealCombinationEnum.SEVEN_MEALS
+        return combination.getSix()
     }
 
     if (between(calorie, 3900, 4400)) {
-        return MealCombinationEnum.EIGHT_MEALS
+        return MealCombinationEnum.SIX_MEALS_ONE_SNACK
     }
 
     if (between(calorie, 4400, 3900)) {
-        return MealCombinationEnum.NINE_MEALS
+        return combination.getSeven()
     }
 
     if (between(calorie, 4600, 5100)) {
-        return MealCombinationEnum.TEN_MEALS
+        return MealCombinationEnum.EIGHT_MEALS
     }
 
-    return MealCombinationEnum.TWO_MEALS
+    return MealCombinationEnum.NINE_MEALS
 }
 
 function between(num, min, max) {

@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="ml-auto">
+        <div *ngIf="hasPercentage" class="ml-auto">
             {{ meal.probability * 100 | number : '1.0-0' }}%
         </div>
     </div>

@@ -10,6 +10,8 @@ import {IsEmptyPipe} from 'app/core/pipes/is-empty.pipe'
 import {AgePipe} from 'app/core/pipes/age.pipe'
 import {ShortenPipe} from 'app/core/pipes/shortened.pipe'
 import {HasDecimalPipe} from 'app/core/pipes/has-decimal.pipe'
+import {CalculateDailySummaryPipe} from 'app/core/pipes/calculate-daily-summary.pipe'
+import {GeneratorNutritionFactsComponent} from 'app/modules/generator/generator-nutrition-facts/generator-nutrition-facts.component'
 
 const components = [
     ...sharedComponents,
@@ -18,6 +20,9 @@ const components = [
     ToBMIPipe,
     ShortenPipe,
     HasDecimalPipe,
+    CalculateDailySummaryPipe,
+
+    GeneratorNutritionFactsComponent,
 ]
 
 const modules = [

@@ -1,1 +1,1 @@
-<meal *ngFor="let item of [1, 23, 4, 5, 6]; trackBy: trackByFn"></meal>
+<meal [meal]="meal" *ngFor="let meal of meals; trackBy: trackByFn"></meal>

@@ -39,7 +39,6 @@ export class GeneratorButtonComponent implements OnInit {
     beginCalculating() {
         this.loading = true
         this.user$.pipe(take(1)).subscribe(async (user) => {
-            console.log(user)
 
             const mealCombination = this.getSuggestion(user)
 

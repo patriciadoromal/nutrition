@@ -8,7 +8,6 @@ import {GeneratorButtonComponent} from './generator-button/generator-button.comp
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {GeneratorComponent} from './generator.component'
-import {GeneratorNutritionFactsComponent} from './generator-nutrition-facts/generator-nutrition-facts.component'
 import {GeneratorTargetsTableComponent} from './generator-targets-table/generator-targets-table.component'
 import {GeneratorWeekAndDayComponent} from './generator-week-and-day/generator-week-and-day.component'
 
@@ -19,7 +18,6 @@ import {GeneratorWeekAndDayComponent} from './generator-week-and-day/generator-w
         GeneratorButtonComponent,
         GeneratorMacrosComponent,
         GeneratorMealsComponent,
-        GeneratorNutritionFactsComponent,
         GeneratorTargetsTableComponent,
         GeneratorWeekAndDayComponent,
     ],

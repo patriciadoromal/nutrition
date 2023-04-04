@@ -28,9 +28,15 @@ export class GeneratorWeekAndDayComponent implements OnInit {
 
     ngAfterViewInit(): void {}
 
-    changeWeek(week: WeekEnum) {}
+    changeWeek(week: WeekEnum) {
+        this.activeWeek$.next(week)
+        this.onChangeWeek.emit(week)
+    }
 
-    changeDay(day: DayEnum) {}
+    changeDay(day: DayEnum) {
+        this.activeDay$.next(day)
+        this.onChangeDay.emit(day)
+    }
 
     trackByFn(index: number, item: any): any {
         return item.id || index

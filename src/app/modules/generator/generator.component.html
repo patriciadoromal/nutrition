@@ -11,11 +11,14 @@
     <div class="w-full min-h-full p-10">
         <generator-button [user$]="user$"></generator-button>
 
-        <generator-week-and-day></generator-week-and-day>
+        <generator-week-and-day
+            (onChangeDay)="changeDay($event)"
+            (onChangeWeek)="changeWeek($event)"
+        ></generator-week-and-day>
 
-        <generator-meals></generator-meals>
+        <generator-meals [meals]="meals" [user$]="user$"></generator-meals>
 
-        <generator-nutrition-facts></generator-nutrition-facts>
+        <generator-nutrition-facts [meals]="meals"></generator-nutrition-facts>
     </div>
 
     <div class="flex flex-col w-full min-h-full p-10 border-l border-gray-100">
@@ -38,6 +41,7 @@
 
         <button
             (click)="save()"
+            *ngIf="user.recommendation"
             class="px-4 py-3 ml-auto font-bold text-white rounded-md mt-9 bg-brand-orange"
         >
             Let's do this!
